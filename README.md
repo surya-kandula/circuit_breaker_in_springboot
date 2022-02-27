@@ -1,6 +1,4 @@
-## Springboot Skeleton Project
+## Usage of Resilience4j Circuit Breaker in Springboot
 
-### Features
-- Contains springboot-starter-web which is used for Backend Web Applications
-- Uncomment to use springboot-devtools
-- Uncomment to use springboot-actuator
+Demonstration of how to use Circuit Breaker in SPringboot.
+Explore the features of Resilience4j Circuit Breaker https://resilience4j.readme.io/docs/circuitbreaker

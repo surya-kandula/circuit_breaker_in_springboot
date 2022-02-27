@@ -37,31 +37,51 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- devtools is used for hot reload
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-        </dependency>-->
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
 
-        <!-- Actuator is used for bunch of production ready features like metrics
-        Refer https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html
+        <!--Actuator is used for bunch of production ready features like metrics
+        Refer https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>-->
+        </dependency>
 
 
+<!--        Resilience4J dependencies-->
+        <!--Following dependencies are required for Resilience4J to function correctly
+        Refer https://resilience4j.readme.io/docs/getting-started-3#setup-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.resilience4j</groupId>
+            <artifactId>resilience4j-spring-boot2</artifactId>
+            <version>1.7.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.resilience4j</groupId>
+            <artifactId>resilience4j-reactor</artifactId>
+            <version>1.7.0</version>
+        </dependency>
+
+        <!--Following dependencies are required for Resilience4J to expose metrics against /actuator/metrics
+        Refer https://resilience4j.readme.io/docs/micrometer-->
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-core</artifactId>
+            <version>1.7.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.resilience4j</groupId>
+            <artifactId>resilience4j-micrometer</artifactId>
+            <version>1.7.0</version>
+        </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <!--This plugin is already part of parent POM. This declaration is un-necessary. Only useful in case of overrides
-            Refer https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/htmlsingle/#?.?-->
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
 </project>
